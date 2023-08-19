@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT BUBBLING</title>
+    <style>
+        body{
+            padding: 20px;
+            background-color: pink;
+        }
+        div{
+            padding: 20px;
+            background-color: green;
+            width: max-content;
+        }
+        span{
+            padding: 20px;
+            display: block;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+           <button>click me!</button> 
+        </span>
+    </div>
+    <script>
+        const body=document.getElementsByTagName("body")[0];
+        const div=document.getElementsByTagName("div")[0];
+        const span=document.getElementsByTagName("span")[0];
+        const button=document.getElementsByTagName("button")[0];
+        body.addEventListener('click', () =>{
+            console.log("body is clicked")
+        });
+        div.addEventListener('click', () =>{
+            console.log("div is clicked")
+        });
+        span.addEventListener('click', () =>{
+            console.log("span is clicked")
+        });
+        button.addEventListener('click', () =>{
+            console.log("button is clicked")
+        });
+    </script>
+</body>
+</html>
